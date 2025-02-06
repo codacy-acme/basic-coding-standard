@@ -1,10 +1,9 @@
 """Main script for creating a Codacy coding standard."""
 import sys
 import click
-from typing import Optional, List, Dict
+from typing import Optional
 from src.api.codacy import CodacyAPI
-from src.config.settings import settings
-from src.utils.logger import setup_logger, get_logger
+from src.utils.logger import setup_logger
 
 def process_patterns(
     api: CodacyAPI,

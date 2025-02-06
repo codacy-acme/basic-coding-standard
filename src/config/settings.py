@@ -1,6 +1,5 @@
 """Configuration settings for the Codacy coding standard generator."""
 import os
-from typing import Optional
 from dotenv import load_dotenv
 
 # Load environment variables from .env file

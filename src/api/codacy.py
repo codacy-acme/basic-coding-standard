@@ -1,8 +1,7 @@
 """Codacy API client for managing coding standards."""
 import requests
 import time
-import json
-from typing import Dict, List, Optional
+from typing import Dict, List
 from src.config.settings import settings
 from src.utils.logger import get_logger
 

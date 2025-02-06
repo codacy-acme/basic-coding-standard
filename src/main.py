@@ -160,4 +160,4 @@ def main(
     create_standard(project_name, dry_run, verbose, output)
 
 if __name__ == "__main__":
-    main()
+    main(auto_envvar_prefix="CODACY")  # Invoke Click command with environment variable support

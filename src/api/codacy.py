@@ -82,14 +82,11 @@ class CodacyAPI:
         data = {
             "name": name,
             "languages": [
-                "CSharp", "Java", "Go", "Kotlin", "Ruby", "Scala", "Python", "TypeScript", 
-                "Javascript", "CoffeeScript", "Swift", "JSP", "VisualBasic", "PHP", "PLSQL", 
-                "SQL", "TSQL", "Crystal", "Haskell", "Elixir", "Groovy", "Apex", "VisualForce", 
-                "Velocity", "CSS", "HTML", "LESS", "SASS", "Dockerfile", "Terraform", "Shell", 
-                "JSON", "XML", "Perl", "Lua", "Powershell", "YAML", "Cobol", "Rust", "Erlang", 
-                "ABAP", "Objective C", "Markdown", "Julia", "Scratch", "FSharp", "Lisp", 
-                "Prolog", "R", "Solidity", "Elm", "Fortran", "Dart", "OCaml", "Clojure", 
-                "C", "CPP"
+                "Markdown", "YAML", "JSON", "Python", "Dockerfile", "Shell", "XML", 
+                "Javascript", "HTML", "CSS", "Java", "C", "CPP", "TypeScript", "Powershell", 
+                "CSharp", "SQL", "SASS", "Swift", "Ruby", "Terraform", "Kotlin", "Go", 
+                "CoffeeScript", "JSP", "Objective C", "PHP", "Dart", "Perl", "LESS", 
+                "Groovy", "Lua", "Scala", "VisualForce", "Velocity", "Lisp", "VisualBasic"
             ]
         }
         return self._make_request("POST", endpoint, json=data)

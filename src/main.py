@@ -129,7 +129,12 @@ def create_standard(
         logger.error(f"Failed to create coding standard: {str(e)}")
         sys.exit(1)
 
-@click.command()
+@click.group()
+def cli():
+    """Codacy coding standard management tool."""
+    pass
+
+@cli.command()
 @click.option(
     "--project-name",
     required=True,
@@ -150,7 +155,7 @@ def create_standard(
     type=str,
     help="Custom log file path"
 )
-def main(
+def create(
     project_name: str,
     dry_run: bool,
     verbose: bool,
@@ -160,4 +165,4 @@ def main(
     create_standard(project_name, dry_run, verbose, output)
 
 if __name__ == "__main__":
-    main(auto_envvar_prefix="CODACY")  # Invoke Click command with environment variable support
+    cli()  # pylint: disable=no-value-for-parameter

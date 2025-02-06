@@ -1,6 +1,6 @@
 # Codacy Basic Coding Standard Generator
 
-This script creates a basic coding standard in Codacy that enables all languages and tools while disabling minor findings. This ensures a focus on impactful code quality issues.
+This script creates a basic coding standard in Codacy that enables specific languages and tools while disabling minor findings. This ensures a focus on impactful code quality issues.
 
 ## Prerequisites
 
@@ -36,9 +36,22 @@ Create a `.env` file in the project root or set the following environment variab
 ```bash
 CODACY_API_TOKEN=your_api_token_here
 CODACY_ORG_NAME=your_organization_name
-CODACY_API_URL=https://api.codacy.com/api/v3  # Optional, defaults to this value
+CODACY_PROVIDER=gh  # For GitHub, adjust for your provider
+CODACY_API_URL=https://app.codacy.com  # Optional, defaults to this value
 LOG_LEVEL=INFO  # Optional, defaults to INFO
 ```
+
+## Supported Languages
+
+The following languages are enabled in the coding standard:
+
+- Web Technologies: HTML, CSS, JavaScript, TypeScript, SASS, LESS
+- Backend Languages: Python, Java, C, C++, C#, Go, Ruby, PHP, Kotlin, Scala
+- Shell Scripting: Shell, PowerShell
+- Mobile Development: Swift, Objective C, Dart
+- Configuration & Markup: JSON, YAML, XML, Markdown
+- Infrastructure: Dockerfile, Terraform
+- Other Languages: CoffeeScript, JSP, Perl, Lua, Groovy, Lisp, Visual Basic, Visual Force, Velocity
 
 ## Usage
 
@@ -46,7 +59,7 @@ Run the script from the project root directory:
 
 ```bash
 # Make sure you're in the project root directory
-python -m src.main --project-name "My Coding Standard"
+python -m src.main create --project-name "My Coding Standard"
 ```
 
 ### Command Line Options
@@ -60,13 +73,13 @@ python -m src.main --project-name "My Coding Standard"
 
 ```bash
 # Basic usage
-python -m src.main --project-name "Enterprise Standard"
+python -m src.main create --project-name "Enterprise Standard"
 
 # With verbose logging and custom output
-python -m src.main --project-name "Enterprise Standard" --verbose --output "./custom_log.log"
+python -m src.main create --project-name "Enterprise Standard" --verbose --output "./custom_log.log"
 
 # Dry run to preview changes
-python -m src.main --project-name "Enterprise Standard" --dry-run
+python -m src.main create --project-name "Enterprise Standard" --dry-run
 ```
 
 ## Logging
